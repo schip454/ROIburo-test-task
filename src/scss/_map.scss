@@ -1,0 +1,306 @@
+.map {
+  position: relative;
+  margin-bottom: 124px;
+  &__content {
+    min-height: 720px;
+    filter: grayscale(1);
+    margin-bottom: 124px;
+  }
+  &__item {
+    height: 720px;
+  }
+  &__contacts {
+    filter: grayscale(0);
+    max-width: 554px;
+    width: 100%;
+    position: absolute;
+    font-weight: 600;
+    top: 56px;
+    left: 56px;
+    background: $white;
+    padding: 56px;
+  }
+  &__contacts-title {
+    margin-bottom: 32px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+  &__contacts-list {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 24px;
+    margin-bottom: 62px;
+  }
+  &__contacts-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+  &__contacts-wrapper {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  &__contacts-info {
+  }
+  &__contacts-infotitle {
+    margin-bottom: 4px;
+  }
+  &__contacts-infotext {
+    color: $darkgrey;
+  }
+  &__contacts-copybtn {
+    padding: 16px;
+    border: 1px solid $grey;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease;
+    path {
+      transition: 0.3s ease;
+    }
+    &:hover {
+      border-color: $green;
+      path {
+        stroke: $green;
+      }
+    }
+  }
+  &__contacts-controls {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+    justify-content: center;
+  }
+  &__contacts-btn {
+    width: 100%;
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    align-items: center;
+    padding: 16px 26px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  &__contacts-btn--map {
+    background: $lightgreen;
+    color: $green;
+    &:hover {
+      background: darken($color: $lightgreen, $amount: 5%);
+    }
+  }
+  &__contacts-btn--call {
+    background: $green;
+    color: $white;
+    &:hover {
+      background: lighten($color: $green, $amount: 5%);
+    }
+  }
+
+  &__info {
+    position: absolute;
+    right: 56px;
+    top: 56px;
+    background: $white;
+    padding: 32px;
+    max-width: 644px;
+  }
+  &__info-wrapper {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+  }
+  &__info-text {
+    font-size: 14px;
+    line-height: 20px;
+    color: $darkgrey;
+  }
+
+  &__slider {
+  }
+  &__slider-wrapper {
+    padding-bottom: 100px;
+
+    .swiper-scrollbar-drag {
+      background: $green;
+      border-radius: 0;
+    }
+    .swiper-scrollbar {
+      max-width: 86%;
+      height: 8px;
+      border-radius: 0;
+      bottom: 23px;
+    }
+    .swiper-button-next,
+    .swiper-button-prev {
+      bottom: 0;
+      top: auto;
+      padding: 16px;
+      border: 1px solid $green;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.3s ease;
+      width: 56px;
+      height: 56px;
+      &::after,
+      &::before {
+        font-size: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        color: $green;
+        height: 24px;
+      }
+      &:hover {
+        background: rgba($color: $green, $alpha: 0.1);
+        path {
+          stroke: $green;
+        }
+      }
+    }
+    .swiper-button-next {
+      right: 0;
+      left: auto;
+    }
+    .swiper-button-prev {
+      right: 76px;
+      left: auto;
+    }
+    .swiper-button-disabled {
+      opacity: 1;
+      border-color: transparent;
+      &::after {
+        color: $grey;
+      }
+    }
+  }
+}
+
+@media (max-width: 1440px) {
+  .map__info {
+    max-width: 510px;
+  }
+}
+@media (max-width: 1240px) {
+  .map {
+    &__info {
+      max-width: 410px;
+      right: 32px;
+      top: 32px;
+    }
+    &__contacts {
+      left: 32px;
+      top: 32px;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .map {
+    &__slider-wrapper {
+      .swiper-scrollbar {
+        max-width: 80%;
+      }
+    }
+    &__contacts {
+      top: 16px;
+      left: 16px;
+      padding: 24px;
+    }
+    &__info {
+      top: 16px;
+      right: 16px;
+      padding: 24px;
+      max-width: 380px;
+    }
+    &__content {
+      min-height: 696px;
+    }
+    &__item {
+      height: 696px;
+    }
+  }
+}
+
+@media (max-width: 1024px) {
+  .map {
+    margin-bottom: 100px;
+    &__content {
+      min-height: 400px;
+    }
+    &__item {
+      height: 400px;
+    }
+    &__contacts {
+      position: static;
+      max-width: none;
+      width: 100%;
+      margin-bottom: 100px;
+      background: darken($white, 3%);
+      padding: 40px 24px;
+    }
+    &__slider-wrapper {
+      padding-bottom: 40px;
+      .swiper-scrollbar {
+        max-width: 100%;
+        bottom: 0;
+      }
+      .swiper-button-next,
+      .swiper-button-prev {
+        display: none;
+      }
+    }
+    &__info {
+      max-width: none;
+      width: 100%;
+      position: static;
+      margin-bottom: 32px;
+      background: darken($white, 3%);
+      padding: 32px;
+    }
+    &__content {
+      margin-bottom: 32px;
+    }
+  }
+}
+
+@media (max-width: 767px) {
+  .map {
+    margin-bottom: 64px;
+    &__contacts-list {
+      margin-bottom: 32px;
+    }
+    &__contacts {
+      margin-bottom: 64px;
+    }
+    &__contacts-controls {
+      gap: 16px;
+      flex-direction: column;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .map {
+    &__contacts-title {
+      font-size: 20px;
+      line-height: 28px;
+    }
+    &__contacts-item {
+      align-items: flex-end;
+    }
+    &__contacts-wrapper {
+      flex-direction: column;
+      gap: 16px;
+    }
+    &__contacts-copybtn {
+      height: 56px;
+    }
+  }
+}

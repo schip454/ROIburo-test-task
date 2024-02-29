@@ -1,0 +1,39 @@
+@import './variables';
+@import './reset';
+@import './breadcrumbs';
+@import './map';
+@import './team';
+@import './requisites';
+
+.container {
+  max-width: 1776px;
+  padding: 50px 20px;
+  margin: 0 auto;
+}
+
+.main-title {
+  font-size: 56px;
+  line-height: 68px;
+  font-weight: 600;
+  margin-bottom: 56px;
+}
+
+.section-title {
+  font-weight: 600;
+  font-size: 48px;
+  line-height: 58px;
+  margin-bottom: 32px;
+}
+
+@media (max-width: 767px) {
+  .main-title {
+    font-size: 32px;
+    line-height: 40px;
+    margin-bottom: 32px;
+  }
+  .section-title {
+    margin-bottom: 20px;
+    font-size: 32px;
+    line-height: 40px;
+  }
+}
