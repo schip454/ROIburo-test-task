@@ -302,5 +302,11 @@
     &__contacts-copybtn {
       height: 56px;
     }
+    &__item {
+      height: 280px;
+    }
+    &__content {
+      min-height: 280px;
+    }
   }
 }
